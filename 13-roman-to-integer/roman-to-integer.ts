@@ -22,12 +22,18 @@ function romanToInt(s: string): number {
     let nextNumber: number
     let currentNumber: number = 0
 
+    // IV
     for(let i: number = 0; i < s.length; i++) {
         currentNumber= convertRomanToInt(s[i])
+        // looping 1: currentNumber = 1 
         nextNumber = -1
 
+        // looping 1: i = 0
+        // looping 1: s.length = 2
         if(i+1 <= s.length - 1) {
+            // looping 1: i+1 = 1, s.length - 1 = 1 ==> true
             nextNumber = convertRomanToInt(s[i+1])
+            // looping 1: nextNumber = 5
         }
 
         if(nextNumber > currentNumber) {
